@@ -1,0 +1,77 @@
+.product-card {
+    width: 300px; /* Ширина карточки */
+    border: 1px solid #ddd; /* Граница карточки */
+    border-radius: 8px; /* Закруглённые углы */
+    overflow: hidden; /* Обрезаем содержимое */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+    background-color: #fff; /* Белый фон */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Анимация */
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px); /* Поднимаем карточку при наведении */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Увеличиваем тень */
+  }
+  
+  .product-image {
+    width: 100%; /* Занимает всю ширину карточки */
+    height: 300px; /* Фиксированная высота изображения */
+    object-fit: cover; /* Кропаем изображение по центру */
+  }
+  
+  .product-content {
+    padding-left: 15px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .product-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .product-description {
+    font-size: 14px;
+    color: #555;
+    word-wrap: break-word; /* Перенос длинных слов */
+    overflow-wrap: break-word; /* Перенос для слов */
+    margin-bottom: 20px;
+  }
+  
+  .product-footer {
+    font-size: 14px;
+    color: #777;
+    margin-top: auto; /* Прижимаем этот блок к низу карточки */ 
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-price {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 5px;
+  }
+
+  .product-location {
+    margin-bottom: 8px;
+  }
+  
+  .product-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #888;
+  }
