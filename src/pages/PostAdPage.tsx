@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom"; // ✅ Импортируем useNavigate
 import './PostAdPage.css';
 import { ReactComponent as CameraIcon } from '../assets/camera.svg';
+import { ReactComponent as ArrowIcon } from "../assets/arrow-left.svg"; // ✅ Импорт SVG стрелки
 
 const categories = [
   "Коти", "Собаки", "Птахи", "Гризуни", "Рептилії", 
@@ -16,6 +18,7 @@ const regions = [
 ];
 
 const PostAdPage: React.FC = () => {
+  const navigate = useNavigate(); // ✅ Хук для навигации
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
@@ -39,10 +42,24 @@ const PostAdPage: React.FC = () => {
     setSelectedImages([]);
   };
 
+    // ✅ Обработчик формы
+    const handleSubmit = (event: React.FormEvent) => {
+      event.preventDefault(); // Предотвращаем перезагрузку страницы
+      navigate("/success"); // ✅ Переход на страницу успеха
+    };
+
   return (
     <div className="post-ad-container">
+       {/* ✅ Кнопка-стрелочка для возврата */}
+       <div className="back-button-container">
+        <button className="back-button" onClick={() => navigate("/")}>
+          <ArrowIcon className="back-icon" />
+        </button>
+      </div>
+
       <h2 className="post-ad-title">Додайте ваше оголошення!</h2>
 
+      <form onSubmit={handleSubmit}> {/* ✅ Форма */}
       <div className="post-ad-form">
         {/* Левая часть формы */}
         <div className="form-left">
@@ -164,6 +181,7 @@ const PostAdPage: React.FC = () => {
       <div className="button-container">
         <button type='submit' className="submit-button">РОЗМІСТИТИ</button>
       </div>
+      </form>
     </div>
   );
 };

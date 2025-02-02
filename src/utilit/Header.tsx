@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom'; // Импорт useNavigate
 import './Header.css';
 import { ReactComponent as PawIcon } from '../assets/paw.svg';
+import { ReactComponent as CloseIcon } from "../assets/close-icon.svg";
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -75,7 +76,9 @@ const Header: React.FC = () => {
       {isLoginModalOpen && (
         <div className="modal-overlay" onClick={closeModals}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-button" onClick={closeModals}>&times;</button>
+            <button className="close-button" onClick={closeModals}>
+            <CloseIcon className="close-icon" />
+            </button>
             <h2 className='title-login'>Ласкаво просимо</h2>
             <form className="login-form">
               <label>
@@ -96,7 +99,9 @@ const Header: React.FC = () => {
       {isRegisterModalOpen && (
         <div className="modal-overlay" onClick={closeModals}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-button" onClick={closeModals}>&times;</button>
+            <button className="close-button" onClick={closeModals}>
+            <CloseIcon className="close-icon" />
+            </button>
             <h2 className='title-login'>Ласкаво просимо</h2>
             <form className="register-form">
               <label>

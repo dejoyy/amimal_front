@@ -1,7 +1,9 @@
-import React from 'react';
-import './ProductCard.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./ProductCard.css";
 
 interface ProductProps {
+  id: number; // ✅ Добавлен ID
   image: string;
   title: string;
   description: string;
@@ -10,9 +12,15 @@ interface ProductProps {
   date: string;
 }
 
-const ProductCard: React.FC<ProductProps> = ({ image, title, description, price, location, date }) => {
+const ProductCard: React.FC<ProductProps> = ({ id, image, title, description, price, location, date }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/product/${id}`); // ✅ Теперь можно открыть детали объявления
+  };
+
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={handleClick} style={{ cursor: "pointer" }}>
       <img src={image} alt={title} className="product-image" />
       <div className="product-content">
         <h3 className="product-title">{title}</h3>
