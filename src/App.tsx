@@ -8,6 +8,8 @@ import SavedAdsPage from "./pages/SavedAdsPage";
 import PostAdPage from "./pages/PostAdPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import SuccessPostPage from "./pages/SuccessPostPage"; // ✅ Импортируем страницу успеха
+import About from "./pages/About";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/post-ad" element={<PostAdPage />} />
         <Route path="/product/:id" element={<ProductDetailsPage />} />
         <Route path="/success" element={<SuccessPostPage />} /> {/* ✅ Новый маршрут */}
+        <Route path="/about" element={<About />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
     </>

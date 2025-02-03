@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { Link } from "react-router-dom";
 import React from 'react';
 import './Footer.css';
 
@@ -24,8 +25,8 @@ const Footer: React.FC = () => {
             <p className='logo-class'><span className='logo-span'>ZOO</span>FEEL</p> 
           </h1>
           <div className='group-about'>
-          <p><a className='about' href="#">Про нас</a></p>
-          <p><a className='about' href="#">Політика конфіденційності</a></p>
+          <p><Link className='about' to="/about">Про нас</Link></p>
+<p><Link className='about' to="/privacy-policy">Політика конфіденційності</Link></p>
           </div>
           <p className='dreamteam'>DreamTeam © 2025 All rights reserved</p>
         </div>
